@@ -1,0 +1,51 @@
+buildscript { // 内部的脚本优先执行。
+    ext {    // 定义动态属性
+        springBootVersion = '2.1.1.RELEASE'
+//        thymeleaf.version = '3.0.6.RELEASE'
+    }
+    repositories { // 使用了 maven 中心仓库，也可以使用其他仓库
+        mavenCentral()
+//		maven { url "https://repo.spring.io/milestone"}
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+    }
+    dependencies { // 依赖关系
+        // classpath 说明其他脚本 ClassLoader 可以使用它们。
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-starter-thymeleaf:2.1.1.RELEASE")
+    }
+
+}
+
+// 使用插件
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'Star.CS.whu'
+// 指定生成的版本
+version = '1.1.0.RELEASE'
+// 指定编译 .java 文件的 JDK 版本
+sourceCompatibility = 1.8
+
+// 指定 Maven 中心仓库
+repositories {
+    mavenCentral()
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+}
+
+
+dependencies {
+    // 用于运行阶段
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    // 用于测试阶段
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    // 用于编译阶段
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+}
