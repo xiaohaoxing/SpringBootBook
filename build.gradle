@@ -48,4 +48,11 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
 
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    // 添加 JPA 支持
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile 'org.springframework.data:spring-data-jpa'
+    // 添加 Mysql JDBC 支持
+    compile 'mysql:mysql-connector-java:8.0.13'
+    // 添加内存数据库 H2 支持
+    runtime 'com.h2database:h2:1.4.196'
 }
