@@ -26,7 +26,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'Star.CS.whu'
 // 指定生成的版本
-version = '1.1.0.RELEASE'
+version = '1.2.0.RELEASE'
 // 指定编译 .java 文件的 JDK 版本
 sourceCompatibility = 1.8
 
