@@ -1,7 +1,6 @@
 package Star.CS.whu.SpringBootBook.controller;
 
 import Star.CS.whu.SpringBootBook.domain.User;
-import Star.CS.whu.SpringBootBook.jpa.UserEntity;
 import Star.CS.whu.SpringBootBook.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
