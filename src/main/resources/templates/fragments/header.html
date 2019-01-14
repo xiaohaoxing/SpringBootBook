@@ -19,9 +19,20 @@
     <title>Title</title>
 </head>
 <body>
-<div style="position:relative;margin-top: 0px;width:100%;background-color: aliceblue;text-align: center;">
-    <h1>Thymeleaf In Action</h1>
-    <a href="/users" th:href="@{~/users}">首页</a>
-</div>
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/" th:href="@{~/}">XHX Blog</a>
+        <div class="collapse navbar-collapse" id="navbarContainer">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{~/users}">首页<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </body>
 </html>
