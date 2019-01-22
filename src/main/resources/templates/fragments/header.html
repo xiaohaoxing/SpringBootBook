@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout" th:fragment="header">
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+        th:fragment="header">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no"/>
@@ -31,6 +35,22 @@
                     <a class="nav-link" th:href="@{~/users}">首页<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+            <!-- 登录判断 -->
+            <div sec:authorize="isAuthenticated()" class="row">
+                <!-- 已登录就用户名和退出按钮 -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span class="nav-link" sec:authentication="name"></span>
+                    </li>
+                </ul>
+                <form action="/logout" th:action="@{/logout}" method="post">
+                    <input class="btn btn-outline-success" type="submit" value="退出"/>
+                </form>
+            </div>
+
+            <div sec:authorize="isAnonymous()">
+                <a href="/login" th:href="@{~/login}" class="btn btn-outline-success my-2 my-sm-0" type="submit">登录</a>
+            </div>
         </div>
     </div>
 </nav>
