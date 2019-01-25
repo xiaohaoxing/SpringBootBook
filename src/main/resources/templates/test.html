@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">XHX Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/users">首页<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <span class=" form-inline my-2 my-lg-0">
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="/index">xhx</a>
+                </li>
+            </ul>
+            <form class="mr-sm-2" method="post" action="/logout">
+                <input class="btn btn-outline-success" type="submit" value="退出"/>
+            </form>
+        </span>
+    </div>
+</nav>
+</body>
+</html>
+
+
